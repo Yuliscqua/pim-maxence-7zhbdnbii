@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import GameList from "./components/GameList";
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
     <div className="homePage">
-      <header className="header"></header>
+      <header className="header">
+        <Link to ="/add_game">Ajouter un jeu</Link>
+      </header>
       <div className="body">
         <div className="searchBar"></div>
         <div className="dailyGame">
@@ -16,7 +20,7 @@ function HomePage() {
         <div className="recommandations">
           <b>Recommandés pour vous</b>
           <div className="carrousel">
-            <div className="games_card"></div>
+            <GameList />
           </div>
         </div>
         <div className="categories">
