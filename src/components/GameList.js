@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {collection, getDocs} from "firebase/firestore";
 import { db } from "../firebase";
+import { Link } from 'react-router-dom';
 
 const GameList = () => {
     const [games, setGames] = useState([]);
@@ -24,7 +25,7 @@ const GameList = () => {
             <ul>
                 {games.map(game => (
                     <li key={game.id}>
-                        <strong>{game.name}</strong> - {game.price}
+                        <Link to="../game_shop" state={{id: game.id, name: game.name}}>{game.name}</Link> - {game.price}
                     </li>
                 ))}
             </ul>
