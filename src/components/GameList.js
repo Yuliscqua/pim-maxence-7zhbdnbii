@@ -25,7 +25,8 @@ const GameList = () => {
             <ul>
                 {games.map(game => (
                     <li key={game.id}>
-                        <Link to="../game_shop" state={{id: game.id, name: game.name}}>{game.name}</Link> - {game.price}
+                        <img  src={game.logo} />
+                        <Link to={`../game_shop/${game.id}`}>{game.name}</Link> - {game.price}
                     </li>
                 ))}
             </ul>
