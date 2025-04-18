@@ -13,9 +13,69 @@ h2 {
 }
 
 .header {
-  background-color: #fed99b;
-  margin: 10px;
-  padding: 20px 10px;
+  background-color: #FF04FB;
+  padding: 10px;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  flex-grow: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.link-text {
+  color: white;
+  font-family: monospace;
+  letter-spacing: 2px;
+  border: 2px solid white;
+  padding: 0 5px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.heart-icon {
+  font-size: 24px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.add-game-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .stores {
