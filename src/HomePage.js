@@ -1,14 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 import GameList from "./components/GameList";
-import { Link } from 'react-router-dom';
+import SidebarMenu from './components/SidebarMenu';
 
 function HomePage() {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <div className="homePage">
       <header className="header">
-        <Link to ="/add_game">Ajouter un jeu</Link>
+        <div className="header-content">
+          <div className="hamburger-menu" onClick={toggleSidebar}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+          <div className="logo">INDIE<span className="link-text">LINK</span></div>
+          <div className="header-icons">
+            <div className="heart-icon">♡</div>
+            <div className="profile-icon"></div>
+          </div>
+        </div>
+        <Link to="/add_game" className="add-game-link">Ajouter un jeu</Link>
       </header>
+
+      {showSidebar && <SidebarMenu onClose={toggleSidebar} />}
+
       <div className="body">
         <div className="searchBar"></div>
         <div className="dailyGame">
