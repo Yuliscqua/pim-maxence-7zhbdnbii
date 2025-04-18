@@ -14,7 +14,7 @@ root.render(
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/add_game" element={<AddingPage />}/>
-          <Route path="/game_shop" element={<GameShop />}/>
+          <Route path="/game_shop/:gameId" element={<GameShop />}/>
         </Routes>
     </Router>
   </div>
