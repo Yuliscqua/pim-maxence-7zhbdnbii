@@ -10,6 +10,7 @@ import Contact from "./Contact.js";
 import SignIn from "./SignIn.js";
 import Profile from "./Profile.js";
 import LogIn from "./LogIn.js";
+import Library from "./Library.js";
 
 const root = createRoot(document.getElementById('app'));
 
@@ -25,6 +26,7 @@ root.render(
           <Route path="/add_game/:userId" element={<AddingPage />}/>
           <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>
           <Route path="/contact/:userId" element={<Contact />}/>
+          <Route path="/library/:userId" element={<Library />}></Route>
         </Routes>
     </Router>
   </div>

@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-const AddGame = () => {
+const AddGame = ({ userId }) => {
     const [name, setName] = useState("");
     const [price,setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [logo, setLogo] = useState("");
     const [banner, setBanner] = useState("");
+    const [gameGenre, setGameGenre] = useState('');
+    const [status, setStatus] = useState(false);
+
+    const gameGenres = [
+        'Action', 'Aventure', 'RPG', 'FPS', 'Sport', 
+        'Stratégie', 'Simulation', 'Puzzle', 'Course'
+    ];
 
     const handleAddGame = async () => {
         if (!name || !description) return alert("Champs requis non remplis !");
@@ -15,6 +22,12 @@ const AddGame = () => {
             name,
             price,
             description,
+            creator: userId,
+            genre: gameGenre,
+            addedat: new Date(),
+            status,
+            banner,
+            logo,
         })
         setName("");
         setPrice("");
@@ -45,6 +58,23 @@ const AddGame = () => {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
             />
+            <select
+                value={gameGenre}
+                onChange={(e) => setGameGenre(e.target.value)}
+            >
+                <option value="">Sélectionner un genre</option>
+                {gameGenres.map(genre => (
+                  <option key={genre} value={genre}>{genre}</option>
+                ))}
+            </select>
+               <div>
+                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="beta" name="status" value="false" />
+                    <label for="beta">Beta</label>
+                </div> 
+                <div>
+                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="finished" name="status" value="true" />
+                    <label for="finished">Lancement</label>
+                </div>
             <input 
                 type="url"
                 placeholder="Lien du logo de votre jeu"
