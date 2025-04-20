@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Pixelated', Arial, sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
 }
 
 body {

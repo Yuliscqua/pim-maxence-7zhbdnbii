@@ -279,7 +279,7 @@ const Profile = () => {
             userGames.map(game => (
               <div key={game.id} className="game-item">
                 <div className="game-info">
-                  <h4>{game.title}</h4>
+                  <h4>{game.name}</h4>
                   <p>{game.genre}</p>
                 </div>
                 

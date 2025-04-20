@@ -7,7 +7,7 @@ function AddingPage () {
     return (
         <div className="addingGame">
             <Header userId={userId}/>
-            <AddGame />
+            <AddGame userId={userId}/>
         </div>
     )    
 }
