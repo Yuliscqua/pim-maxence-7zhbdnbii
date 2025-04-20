@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../style.css';
 import SidebarMenu from './SidebarMenu';
 
-function Header() {
+function Header({ userId }) {
     const [showSidebar, setShowSidebar] = useState(false);
   
     const toggleSidebar = () => {
@@ -19,16 +19,16 @@ function Header() {
                 <div className="bar"></div>
                 <div className="bar"></div>
                 </div>
-                <div className="logo">INDIE<span className="link-text">LINK</span></div>
+                <Link to={`/shop/${userId}`} className="logo">INDIE<span className="link-text">LINK</span></Link>
                 <div className="header-icons">
                 <div className="heart-icon">♡</div>
                 <div className="profile-icon"></div>
                 </div>
             </div>
-            <Link to="/add_game" className="add-game-link">Ajouter un jeu</Link>
+            <Link to={`/add_game/${userId}`} className="add-game-link">Ajouter un jeu</Link>
             </header>
     
-            {showSidebar && <SidebarMenu onClose={toggleSidebar} />}
+            {showSidebar && <SidebarMenu userId={userId} onClose={toggleSidebar} />}
         </div>
     )
 }
