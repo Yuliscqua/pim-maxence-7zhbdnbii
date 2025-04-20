@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import GameList from "./components/GameList";
-import SidebarMenu from './components/SidebarMenu';
+import Header from './components/Header';
 
 function HomePage() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -13,23 +13,7 @@ function HomePage() {
 
   return (
     <div className="homePage">
-      <header className="header">
-        <div className="header-content">
-          <div className="hamburger-menu" onClick={toggleSidebar}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-          <div className="logo">INDIE<span className="link-text">LINK</span></div>
-          <div className="header-icons">
-            <div className="heart-icon">♡</div>
-            <div className="profile-icon"></div>
-          </div>
-        </div>
-        <Link to="/add_game" className="add-game-link">Ajouter un jeu</Link>
-      </header>
-
-      {showSidebar && <SidebarMenu onClose={toggleSidebar} />}
+      <Header />
 
       <div className="body">
         <div className="searchBar"></div>
