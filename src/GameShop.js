@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom'; // Remplacez useLocation par useParams
 import { db } from './firebase';
+import Header from './components/Header';
 import './style.css';
 
 const GameShop = () => {
@@ -54,6 +55,7 @@ const GameShop = () => {
 
     return (
         <div className="game-detail">
+            <Header />
             <h2>{game.name}</h2>
             <div className="game-info">
                 {game.price && <p>Prix: {game.price}</p>}
