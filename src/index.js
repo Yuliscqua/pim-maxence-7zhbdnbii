@@ -22,9 +22,9 @@ root.render(
           <Route path="/login" element={<LogIn />}/>
           <Route path="/shop/:userId" element={<HomePage />} />
           <Route path="/profile/:userId" element={<Profile />}/>
-          <Route path="/add_game" element={<AddingPage />}/>
-          <Route path="/game_shop/:gameId" element={<GameShop />}/>
-          <Route path="/contact" element={<Contact />}/>
+          <Route path="/add_game/:userId" element={<AddingPage />}/>
+          <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>
+          <Route path="/contact/:userId" element={<Contact />}/>
         </Routes>
     </Router>
   </div>

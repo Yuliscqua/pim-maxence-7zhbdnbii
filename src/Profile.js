@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
+import Header from './components/Header.js'
 
 const Profile = () => {
   const { userId } = useParams();
@@ -147,6 +148,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
+      <Header userId={userId}/>
       <h2>Profil de {userData.name}</h2>
       
       <div className="profile-header">

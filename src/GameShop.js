@@ -11,7 +11,7 @@ const GameShop = () => {
     const [loading, setLoading] = useState(true);
     
     // Récupérer l'ID depuis les paramètres d'URL
-    const { gameId } = useParams();
+    const { userId, gameId } = useParams();
 
     useEffect(() => {
         const fetchGameById = async () => {
@@ -55,7 +55,7 @@ const GameShop = () => {
 
     return (
         <div className="game-detail">
-            <Header />
+            <Header userId={userId}/>
             <h2>{game.name}</h2>
             <div className="game-info">
                 {game.price && <p>Prix: {game.price}</p>}

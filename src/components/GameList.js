@@ -3,7 +3,7 @@ import {collection, getDocs} from "firebase/firestore";
 import { db } from "../firebase";
 import { Link } from 'react-router-dom';
 
-const GameList = () => {
+const GameList = ({userId}) => {
     const [games, setGames] = useState([]);
 
     const fetchGames = async () => {
@@ -26,7 +26,7 @@ const GameList = () => {
                 {games.map(game => (
                     <li key={game.id}>
                         <img  src={game.logo} />
-                        <Link to={`../game_shop/${game.id}`}>{game.name}</Link> - {game.price}
+                        <Link to={`../game_shop/${userId}/${game.id}`}>{game.name}</Link> - {game.price}
                     </li>
                 ))}
             </ul>

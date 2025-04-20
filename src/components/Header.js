@@ -19,13 +19,13 @@ function Header({ userId }) {
                 <div className="bar"></div>
                 <div className="bar"></div>
                 </div>
-                <div className="logo">INDIE<span className="link-text">LINK</span></div>
+                <Link to={`/shop/${userId}`} className="logo">INDIE<span className="link-text">LINK</span></Link>
                 <div className="header-icons">
                 <div className="heart-icon">♡</div>
                 <div className="profile-icon"></div>
                 </div>
             </div>
-            <Link to="/add_game" className="add-game-link">Ajouter un jeu</Link>
+            <Link to={`/add_game/${userId}`} className="add-game-link">Ajouter un jeu</Link>
             </header>
     
             {showSidebar && <SidebarMenu userId={userId} onClose={toggleSidebar} />}

@@ -71,7 +71,7 @@ const SidebarMenu = ({ userId, onClose }) => {
           <ul>
             {menuItems.map((item, index) => (
               <li key={index} className="sidebar-item">
-                <Link to={item.path} onClick={onClose}>
+                <Link to={`${item.path}/${userId}`} onClick={onClose}>
                   {item.name}
                 </Link>
               </li>

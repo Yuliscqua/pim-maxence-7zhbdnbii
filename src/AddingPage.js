@@ -1,12 +1,12 @@
 import AddGame from './components/AddGame';
-import { Link } from 'react-router-dom';
 import Header from './components/Header';
+import {useParams } from 'react-router-dom';
 
 function AddingPage () {
+    const { userId } = useParams();
     return (
         <div className="addingGame">
-            <Header />
-            <Link to ="/">Accueil</Link>
+            <Header userId={userId}/>
             <AddGame />
         </div>
     )    

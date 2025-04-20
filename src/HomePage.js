@@ -21,7 +21,7 @@ function HomePage() {
         <div className="recommandations">
           <b>Recommandés pour vous</b>
           <div className="carrousel">
-            <GameList />
+            <GameList userId={userId}/>
           </div>
         </div>
         <div className="categories">
