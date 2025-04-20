@@ -19,7 +19,7 @@ function Header() {
                 <div className="bar"></div>
                 <div className="bar"></div>
                 </div>
-                <div className="logo">INDIE<span className="link-text">LINK</span></div>
+                <Link to="/signin" className="logo">INDIE<span className="link-text">LINK</span></Link>
                 <div className="header-icons">
                 <div className="heart-icon">♡</div>
                 <div className="profile-icon"></div>
