@@ -5,12 +5,6 @@ import GameList from "./components/GameList";
 import Header from './components/Header';
 
 function HomePage() {
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
-
   return (
     <div className="homePage">
       <Header />
