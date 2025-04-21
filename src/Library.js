@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { doc, getDoc, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
-import Header from './components/Header.js'
+import Header from './components/Header.js';
+import SearchBar from './components/SearchBar.js'
 import './style.css'
 
 function Library() {
@@ -53,7 +54,9 @@ function Library() {
   return (
     <div className="library">
       <Header userId={userId} />
-      <h3>Jeux possédés</h3>
+      <h2 className="beta-title">Bibliothèque</h2>
+      <SearchBar />
+      <h3 className="beta-subtitle">Jeux possédés</h3>
       <div className="beta-games-grid">
         {userGames.length > 0 ? (
           userGames.map(game => (

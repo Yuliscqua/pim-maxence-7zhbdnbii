@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { doc, getDocs, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
 import Header from './components/Header.js'
+import SearchBar from './components/SearchBar.js'
 
 function TipsCreation () {
     const { userId } = useParams();
@@ -26,14 +27,7 @@ function TipsCreation () {
             <Header userId={userId} />
             <h4 className="beta-title">Tips / Création</h4>
 
-            <div className="beta-search-bar">
-                <input 
-                    type="text" 
-                    placeholder="Rechercher..." 
-                    className="search-input"
-                />
-                <div className="filter-icon">◀</div>
-            </div>
+            <SearchBar />
 
             <h3 className="beta-subtitle">Maitrisez les moteurs de jeu</h3>
             <div className="category-cards">
