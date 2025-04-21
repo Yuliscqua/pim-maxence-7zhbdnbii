@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './style.css';
+import Header from './components/Header';
 
 function Contact() {
+  const { userId } = useParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,16 +34,7 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <header className="header contact-header">
-        <div className="header-content">
-          <button className="menu-btn">≡</button>
-          <h1 className="logo">INDIELINK</h1>
-          <div className="header-icons">
-            <span className="favorite-icon"></span>
-            <div className="pixel-cat"></div>
-          </div>
-        </div>
-      </header>
+      <Header userId={userId}/>
 
       <main className="contact-main">
         <section className="contact-intro">
