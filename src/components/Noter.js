@@ -88,6 +88,30 @@ const Noter = ({ gameId, userId }) => {
 
     return (
         <div className="game-reviews">
+            <h3>Avis des joueurs</h3>
+            {reviews.length === 0 ? (
+                <p>Aucun avis pour le moment. Soyez le premier à donner votre avis !</p>
+            ) : (
+                <div className="reviews-list">
+                    {reviews.map((review, index) => (
+                        <div key={index} className="review-item">
+                            <div className="review-header">
+                                <strong>{review.userName}</strong>
+                                <span className={`recommendation-badge ${review.recommended ? 'recommended' : 'not-recommended'}`}>
+                                    {review.recommended ? 'Recommandé' : 'Non recommandé'}
+                                </span>
+                                {review.date && (
+                                    <span className="review-date">
+                                        {new Date(review.date.seconds ? review.date.toDate() : review.date).toLocaleDateString()}
+                                    </span>
+                                )}
+                            </div>
+                            <p className="review-text">{review.text}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
+            
             <h3>Donnez votre avis</h3>
             {error && <div className="error-message">{error}</div>}
             
@@ -123,30 +147,6 @@ const Noter = ({ gameId, userId }) => {
                     {submitting ? 'Envoi en cours...' : 'Publier mon avis'}
                 </button>
             </div>
-            
-            <h3>Avis des joueurs</h3>
-            {reviews.length === 0 ? (
-                <p>Aucun avis pour le moment. Soyez le premier à donner votre avis !</p>
-            ) : (
-                <div className="reviews-list">
-                    {reviews.map((review, index) => (
-                        <div key={index} className="review-item">
-                            <div className="review-header">
-                                <strong>{review.userName}</strong>
-                                <span className={`recommendation-badge ${review.recommended ? 'recommended' : 'not-recommended'}`}>
-                                    {review.recommended ? 'Recommandé' : 'Non recommandé'}
-                                </span>
-                                {review.date && (
-                                    <span className="review-date">
-                                        {new Date(review.date.seconds ? review.date.toDate() : review.date).toLocaleDateString()}
-                                    </span>
-                                )}
-                            </div>
-                            <p className="review-text">{review.text}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
         </div>
     );
 };

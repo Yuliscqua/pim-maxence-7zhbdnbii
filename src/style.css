@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: black;
   color: white;
 }
 
@@ -23,6 +23,7 @@ body {
   padding: 10px 15px;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -30,6 +31,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hamburger-menu {
@@ -82,6 +85,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .header .logo {
+    font-size: 1.5rem;
+  }
+  
+  .header-content {
+    flex-wrap: wrap;
+  }
+  
+  .add-game-link {
+    margin-top: 10px;
+    width: 100%;
+    max-width: none;
+  }
 }
 
 /* Hero Banner */
@@ -201,10 +220,8 @@ body {
 }
 
 .boutique-tag {
-  position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #ff00ff;
   color: white;
   padding: 3px 8px;
   font-size: 12px;
@@ -550,6 +567,323 @@ body {
   margin: 15px 0 10px;
 }
 
+/* Style pour la bannière du jeu */
+.game-banner {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px #FF04FB;
+  border: solid 1px #FF04FB;
+}
+
+/* Titre du jeu */
+.game-detail h2 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* Informations sur le jeu */
+.game-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.game-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Date de publication */
+.game-date {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Bouton d'achat */
+.purchase-button {
+  font-family: 'Pixelify Sans', sans-serif;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #FF04FB;
+  color: white;
+  border: 3px solid white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.purchase-button:hover {
+  background-color: white;
+  color: #A504A2;
+}
+
+.purchase-button:disabled {
+  background-color: #717171;
+  border-color: #717171;
+  cursor: not-allowed;
+}
+
+/* ----- Styles pour les avis ----- */
+.game-reviews {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.game-reviews h3 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 30px 0 20px 0;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Message d'erreur */
+.error-message {
+  background-color: rgba(233, 69, 96, 0.2);
+  color: #e94560;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Boutons de recommandation */
+.recommendation-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.recommend-button,
+.not-recommend-button {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recommend-button.active {
+  background-color: #3498db !important;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+}
+
+.not-recommend-button.active {
+  background-color: #e74c3c !important;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+}
+
+/* Zone de texte pour l'avis */
+.review-input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.review-input textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.review-input textarea:focus {
+  border-color: #FF04FB;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Bouton de soumission de l'avis */
+.submit-review {
+  font-family: 'Pixelify Sans', sans-serif;
+  width: 100%;
+  padding: 12px;
+  background-color: #FF04FB;
+  color: white;
+  border: 2px solid #FF04FB;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-review:hover {
+  background-color: white;
+  color: #FF04FB;
+}
+
+.submit-review:disabled {
+  background-color: #717171;
+  border-color: #717171;
+  cursor: not-allowed;
+}
+
+/* Liste des avis */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #FF04FB;
+}
+
+/* En-tête de l'avis avec le nom, badge et date */
+.review-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.review-header strong {
+  font-size: 1.1rem;
+}
+
+/* Badge de recommandation */
+.recommendation-badge {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.recommendation-badge.recommended {
+  background-color: #3498db;
+  color: white;
+}
+
+.recommendation-badge.not-recommended {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Date de l'avis */
+.review-date {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+/* Texte de l'avis */
+.review-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .game-detail {
+    padding: 15px;
+  }
+  
+  .game-banner {
+    height: 200px;
+  }
+  
+  .game-detail h2 {
+    font-size: 2.2rem;
+  }
+  
+  .game-reviews h3 {
+    font-size: 1.5rem;
+  }
+  
+  .recommendation-buttons {
+    flex-direction: column;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .review-date {
+    margin-left: 0;
+  }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Titre principal */
+.profile-container h2 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+}
+
+/* En-tête du profil avec photo et bouton de modification */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+/* Photo de profil */
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #e94560;
+}
+
+.profile-picture img {
 .about-page {
   background-color: #000;
   color: #fff;
@@ -800,7 +1134,371 @@ body {
   height: 100%;
   object-fit: cover;
 }
+/* Photo de profil par défaut */
+.default-profile-picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e94560;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
 
+/* Bouton de modification du profil */
+.profile-header button {
+  font-family: 'Pixelify Sans', sans-serif;
+  padding: 10px 20px;
+  background-color: #e94560;
+  color: white;
+  border: 2px solid #e94560;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-header button:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+/* Section d'informations du profil */
+.profile-info {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+.info-item strong {
+  color: #e94560;
+  margin-right: 10px;
+}
+
+/* Style pour les catégories préférées */
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  background-color: rgba(233, 69, 96, 0.2);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid #e94560;
+}
+
+/* Formulaire de modification du profil */
+.edit-profile {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.edit-profile h3 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e94560;
+}
+
+/* Groupes de formulaire */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Labels des formulaires */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #e94560;
+}
+
+/* Champs de saisie */
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e94560;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Texte d'aide */
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+/* Conteneur pour les cases à cocher de catégories */
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Style pour les cases à cocher */
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.category-checkbox:hover {
+  background-color: rgba(233, 69, 96, 0.3);
+}
+
+.category-checkbox input {
+  margin-right: 6px;
+}
+
+/* Boutons d'action */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  flex: 1;
+  font-family: 'Pixelify Sans', sans-serif;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-buttons button:first-child {
+  background-color: #e94560;
+  color: white;
+  border: 2px solid #e94560;
+}
+
+.action-buttons button:first-child:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+.action-buttons button:last-child {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.action-buttons button:last-child:hover {
+  background-color: white;
+  color: #1a1a2e;
+}
+
+/* Section des jeux */
+.games-section {
+  margin-top: 30px;
+}
+
+.games-section h3 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.games-section > button {
+  font-family: 'Pixelify Sans', sans-serif;
+  padding: 10px 20px;
+  background-color: #e94560;
+  color: white;
+  border: 2px solid #e94560;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.games-section > button:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+/* Formulaire d'ajout de jeu */
+.add-game-form {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.add-game-form button {
+  font-family: 'Pixelify Sans', sans-serif;
+  width: 100%;
+  padding: 12px;
+  background-color: #e94560;
+  color: white;
+  border: 2px solid #e94560;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-game-form button:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+/* Liste des jeux */
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Élément de jeu individuel */
+/* Modification de la liste des jeux pour l'affichage en grille */
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Style des cartes de jeu */
+.game-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(233, 69, 96, 0.4);
+}
+
+/* Style pour l'image du jeu */
+.game-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(233, 69, 96, 0.3);
+}
+
+/* Information du jeu */
+.game-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.game-info h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'Pixelify Sans', sans-serif;
+  line-height: 1.3;
+}
+
+.game-info p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.games-list > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 1200px) {
+  .games-list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .games-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .game-image {
+    height: 120px;
+  }
+  
+  .game-info h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .game-image {
+    height: 100px;
 .beta-game-info {
   padding: 10px;
 }
