@@ -11,6 +11,7 @@ import SignIn from "./SignIn.js";
 import Profile from "./Profile.js";
 import LogIn from "./LogIn.js";
 import Library from "./Library.js";
+import Beta from "./Beta.js"
 
 const root = createRoot(document.getElementById('app'));
 
@@ -27,6 +28,7 @@ root.render(
           <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>
           <Route path="/contact/:userId" element={<Contact />}/>
           <Route path="/library/:userId" element={<Library />}></Route>
+          <Route path="/versions-beta/:userId" element={<Beta />}></Route>
         </Routes>
     </Router>
   </div>

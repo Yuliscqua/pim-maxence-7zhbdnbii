@@ -9,7 +9,7 @@ const AddGame = ({ userId }) => {
     const [logo, setLogo] = useState("");
     const [banner, setBanner] = useState("");
     const [gameGenre, setGameGenre] = useState('');
-    const [status, setStatus] = useState(false);
+    const [status, setStatus] = useState('');
 
     const gameGenres = [
         'Action', 'Aventure', 'RPG', 'FPS', 'Sport', 
@@ -17,7 +17,7 @@ const AddGame = ({ userId }) => {
     ];
 
     const handleAddGame = async () => {
-        if (!name || !description) return alert("Champs requis non remplis !");
+        if (!name || !description || !price || !status || !gameGenre) return alert("Champs requis non remplis !");
         await addDoc(collection(db, "games"), {
             name,
             price,
@@ -68,11 +68,11 @@ const AddGame = ({ userId }) => {
                 ))}
             </select>
                <div>
-                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="beta" name="status" value="false" />
+                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="beta" name="status" value="beta" />
                     <label for="beta">Beta</label>
                 </div> 
                 <div>
-                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="finished" name="status" value="true" />
+                    <input onChange={(e) => setStatus(e.target.value)} type="radio" id="finished" name="status" value="launched" />
                     <label for="finished">Lancement</label>
                 </div>
             <input 
