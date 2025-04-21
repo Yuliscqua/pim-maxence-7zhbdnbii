@@ -38,7 +38,7 @@ root.render(
           <Route path="/tips-creation/:userId" element={<TipsCreation />}></Route>
           <Route path="/classement/:userId" element={<Classement />}></Route>
           <Route path="/events/:userId" element={<Events />}></Route>
-          <Route path="/a-propos/:userId" element={<About />}></Route>
+          <Route path="/a-propos/:userId" element={<About/>}></Route>
         </Routes>
     </Router>
   </div>
