@@ -411,6 +411,16 @@ button[type="submit"]:disabled {
   padding: 15px;
 }
 
+.custom-image {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 15px;
+  top: -25px;
+  background: url(img/image.png);
+  z-index: 101; /* Pour s'assurer que l'image apparaît au-dessus de la barre */
+}
+
 .search-bar {
   background-color: #8fffff;
   border-radius: 25px;
@@ -2091,13 +2101,25 @@ button[type="submit"]:disabled {
 }
 
 /* Barre de recherche */
+
+.custom-image {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 43px;
+  top: -31px;
+  background: url(img/image.png);
+  z-index: 101; /* Pour s'assurer que l'image apparaît au-dessus de la barre */
+}
+
 .beta-search-bar {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #8fffff;
   border-radius: 20px;
   padding: 8px 15px;
-  margin: 15px;
+  margin: 30px 15px;
 }
 
 .search-input {
@@ -2118,3 +2140,4 @@ button[type="submit"]:disabled {
   cursor: pointer;
   color: #333;
 }
+
