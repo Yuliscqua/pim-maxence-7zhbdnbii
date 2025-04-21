@@ -8,7 +8,11 @@ function TipsCreation () {
     const { userId } = useParams();
     
     return (
-        <Header userId={userId} />
+        <div className="tipscreation">
+            <Header userId={userId} />
+            <h4>Tips / Création</h4>
+        </div>
+        
     )
 }
 
