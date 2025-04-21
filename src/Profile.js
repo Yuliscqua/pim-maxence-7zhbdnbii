@@ -128,20 +128,6 @@ const Profile = () => {
     }
   };
 
-  const handleRemoveGame = async (gameId) => {
-    try {
-      const userRef = doc(db, 'users', userId);
-      await updateDoc(userRef, {
-        games: arrayRemove(gameId)
-      });
-      
-      // Retirer le jeu localement
-      setUserGames(userGames.filter(game => game.id !== gameId));
-    } catch (err) {
-      setError('Erreur lors de la suppression du jeu: ' + err.message);
-    }
-  };
-
   if (loading) return <div>Chargement...</div>;
   if (error) return <div className="error">{error}</div>;
   if (!userData) return <div>Utilisateur non disponible</div>;
@@ -278,19 +264,11 @@ const Profile = () => {
           {userGames.length > 0 ? (
             userGames.map(game => (
               <div key={game.id} className="game-item">
+                <img src={game.logo} className="game-image"/>
                 <div className="game-info">
                   <h4>{game.name}</h4>
                   <p>{game.genre}</p>
                 </div>
-                
-                {isOwner && (
-                  <button
-                    className="remove-game"
-                    onClick={() => handleRemoveGame(game.id)}
-                  >
-                    Supprimer
-                  </button>
-                )}
               </div>
             ))
           ) : (

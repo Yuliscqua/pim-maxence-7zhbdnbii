@@ -120,7 +120,7 @@ const GameShop = () => {
                     )}
                 {game.price && <p>Prix: {game.price} €</p>}
                 {game.description && <p>Description: {game.description}</p>}
-                {game.genre && <p>Catégorie : {game.genre}</p>}
+                {game.genre && <p className="boutique-tag">Catégorie : {game.genre}</p>}
                 
                 {/* Bouton d'achat */}
                 <button 

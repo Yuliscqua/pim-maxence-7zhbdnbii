@@ -25,19 +25,22 @@ function Beta () {
         <div>
             <Header userId={userId}/>
             <h2>Venez tester de nouveaux jeux !</h2>
-            <ul>
+            <div className="games-list">
                 {games.map(game => {
                     if (game.status === 'beta'){
                         return (
-                            <li key={game.id}>
-                                <img  src={game.logo} />
-                                <Link to={`../game_shop/${userId}/${game.id}`}>{game.name}</Link> - {game.genre}
-                            </li>
+                            <Link to={`../game_shop/${userId}/${game.id}`} className="game-item" key={game.id}>
+                                <img  className="game-image" src={game.logo} />
+                                <div className="game-info">
+                                    <h4>{game.name}</h4>
+                                    <p>{game.genre}</p>
+                                </div>
+                            </Link>
                         )
                     }
                 }
                 )}
-            </ul>
+            </div>
         </div>
     )
 }
