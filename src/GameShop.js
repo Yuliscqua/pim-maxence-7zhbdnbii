@@ -103,35 +103,109 @@ const GameShop = () => {
         }
     };
 
-    if (loading) return <div>Chargement...</div>;
-    if (error) return <div className="error-message">{error}</div>;
-    if (!game) return <div>Aucun jeu trouvé pour l'ID: {gameId}</div>;
+    // Fonction pour générer un placeholder de couleur si aucune image n'est disponible
+    const getColorPlaceholder = (name) => {
+        if (!name) return '#333'; // Couleur par défaut
+        const hash = name.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
+        const hue = hash % 360;
+        return `hsl(${hue}, 70%, 30%)`;
+    };
+
+    if (loading) return (
+        <div className="loading-container">
+            <Header userId={userId}/>
+            <div className="loading-spinner">Chargement...</div>
+        </div>
+    );
+    
+    if (error) return (
+        <div className="error-container">
+            <Header userId={userId}/>
+            <div className="error-message">{error}</div>
+        </div>
+    );
+    
+    if (!game) return (
+        <div className="not-found-container">
+            <Header userId={userId}/>
+            <div className="not-found-message">Aucun jeu trouvé pour l'ID: {gameId}</div>
+        </div>
+    );
 
     return (
-        <div className="game-detail">
+        <div className="game-detail-page">
             <Header userId={userId}/>
-            {game.banner && <img src={game.banner} alt={game.name} className="game-banner" />}
-            <h2>{game.name}</h2>
-            <div className="game-info">
-                {game.addedat && (
-                    <span className="game-date">
-                        Publié le : {new Date(game.addedat.seconds ? game.addedat.toDate() : game.addedat).toLocaleDateString()}
-                    </span>
+            
+            <div className="game-detail-content">
+                {/* Bannière du jeu */}
+                <div className="game-banner-container">
+                    {game.banner ? (
+                        <img src={game.banner} alt={game.name} className="game-banner" />
+                    ) : (
+                        <div 
+                            className="game-banner-placeholder" 
+                            style={{ 
+                                backgroundColor: getColorPlaceholder(game.name),
+                                height: '200px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: 'white',
+                                fontSize: '24px'
+                            }}
+                        >
+                            {game.name}
+                        </div>
                     )}
-                {game.price && <p>Prix: {game.price} €</p>}
-                {game.description && <p>Description: {game.description}</p>}
-                {game.genre && <p>Catégorie : {game.genre}</p>}
+                </div>
                 
-                {/* Bouton d'achat */}
-                <button 
-                    className="purchase-button"
-                    onClick={handlePurchase}
-                    disabled={purchasing}
-                >
-                    {purchasing ? 'Achat en cours...' : 'Acheter ce jeu'}
-                </button>
+                {/* Informations principales du jeu */}
+                <div className="game-main-info">
+                    <div className="game-header">
+                        <h2 className="game-title">{game.name}</h2>
+                        {game.logo && (
+                            <div className="game-logo">
+                                <img src={game.logo} alt={`Logo ${game.name}`} />
+                            </div>
+                        )}
+                    </div>
+                    
+                    <div className="game-metadata">
+                        {game.addedat && (
+                            <span className="game-date">
+                                Publié le: {new Date(game.addedat.seconds ? game.addedat.toDate() : game.addedat).toLocaleDateString()}
+                            </span>
+                        )}
+                        {game.genre && <span className="game-genre">Catégorie: {game.genre}</span>}
+                        {game.status && <span className="game-status">Statut: {game.status === 'beta' ? 'Version Beta' : 'Lancé'}</span>}
+                    </div>
+                </div>
+                
+                {/* Description et prix */}
+                <div className="game-details">
+                    <div className="game-description">
+                        <h3>Description</h3>
+                        <p>{game.description || "Aucune description disponible pour ce jeu."}</p>
+                    </div>
+                    
+                    <div className="game-purchase-info">
+                        {game.price && <div className="game-price">{game.price} €</div>}
+                        
+                        <button 
+                            className="purchase-button"
+                            onClick={handlePurchase}
+                            disabled={purchasing}
+                        >
+                            {purchasing ? 'Achat en cours...' : 'Acheter ce jeu'}
+                        </button>
+                    </div>
+                </div>
+                
+                {/* Composant d'avis */}
+                <div className="game-reviews-section">
+                    <Noter gameId={gameId} userId={userId} />
+                </div>
             </div>
-            <Noter gameId={gameId} userId={userId} />
         </div>
     );
 };
