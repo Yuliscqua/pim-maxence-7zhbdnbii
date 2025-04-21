@@ -34,7 +34,7 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <Header userId={userId} />
+      <Header userId={userId}/>
 
       <main className="contact-main">
         <section className="contact-intro">
