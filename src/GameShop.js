@@ -3,6 +3,7 @@ import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from './firebase';
 import Header from './components/Header';
+import Noter from './components/Noter';
 import './style.css';
 
 const GameShop = () => {
@@ -135,7 +136,11 @@ const GameShop = () => {
             {game.banner && <img src={game.banner} alt={game.name} className="game-banner" />}
             <h2>{game.name}</h2>
             <div className="game-info">
-                {game.addedat && <p>Lancé le : {dateData ? formatDate(dateData) : 'Date non disponible'}</p>}
+                {game.addedat && (
+                    <span className="game-date">
+                        Publié le : {new Date(game.addedat.seconds ? game.addedat.toDate() : game.addedat).toLocaleDateString()}
+                    </span>
+                    )}
                 {game.price && <p>Prix: {game.price} €</p>}
                 {game.description && <p>Description: {game.description}</p>}
                 {game.genre && <p>Catégorie : {game.genre}</p>}
@@ -149,6 +154,7 @@ const GameShop = () => {
                     {purchasing ? 'Achat en cours...' : 'Acheter ce jeu'}
                 </button>
             </div>
+            <Noter gameId={gameId} userId={userId} />
         </div>
     );
 };
