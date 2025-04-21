@@ -9,11 +9,11 @@ const SidebarMenu = ({ userId, onClose }) => {
   const [error, setError] = useState('');
   const menuItems = [
     { name: 'BIBLIOTHÈQUE', path: '/library' },
-    { name: 'COMMUNAUTÉ', path: '/communaute' },
+    { name: 'COMMUNAUTÉ', path: '/community' },
     { name: 'TIPS/CRÉATION', path: '/tips-creation' },
     { name: 'VERSIONS BETA', path: '/versions-beta' },
     { name: 'CLASSEMENT', path: '/classement' },
-    { name: 'ÉVÉNEMENTS', path: '/evenements' },
+    { name: 'ÉVÉNEMENTS', path: '/events' },
     { name: 'CONTACT', path: '/contact' },
     { name: 'À PROPOS', path: '/a-propos' },
     { name: 'MENTIONS LÉGALES', path: '/mentions-legales' }

@@ -41,17 +41,6 @@ const GameShop = () => {
                         id: docSnap.id,
                         ...gameData
                     });
-                    
-                    // Vérifiez si la date existe
-                    if (gameData.addedat) {
-                        if (gameData.addedat.toDate) {
-                            const date = gameData.addedat.toDate();
-                            setDateData(date);
-                        } else if (typeof gameData.addedat === 'string') {
-                            const date = new Date(gameData.addedat);
-                            setDateData(date);
-                        }
-                    }
                 } else {
                     console.log("Aucun jeu trouvé avec l'ID:", gameId);
                     setError("Aucun jeu trouvé avec cet identifiant.");
@@ -112,18 +101,6 @@ const GameShop = () => {
             setError("Une erreur est survenue lors de l'achat du jeu");
             setPurchasing(false);
         }
-    };
-
-    const formatDate = (date) => {
-        if (!date) return '';
-        
-        return date.toLocaleDateString('fr-FR', {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
-        });
     };
 
     if (loading) return <div>Chargement...</div>;
