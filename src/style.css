@@ -1,15 +1,275 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Pixelify Sans', sans-serif;
+  text-decoration: none;
 }
 
 body {
   background-color: black;
   color: white;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-text {
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+.signin, .login {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.signin:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+.login {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.login:hover {
+  background-color: white;
+  color: #1a1a2e;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  .home-text {
+    font-size: 1rem;
+  }
+  
+  .signin, .login {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+.signup-container, .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Titre des formulaires */
+.signup-container h2, .login-container h2 {
+  font-family: 'Tourney', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+  -webkit-text-stroke: 1px #A504A2;
+}
+
+/* Message d'erreur */
+.error {
+  background-color: rgba(233, 69, 96, 0.2);
+  color: #e94560;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Style des formulaires */
+form {
+  width: 100%;
+}
+
+/* Style des groupes de formulaire */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Style des labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #A504A2;
+}
+
+/* Style des inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus {
+  border-color: #A504A2;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Style pour les catégories de jeux */
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.category-checkbox:hover {
+  background-color: rgba(233, 69, 96, 0.3);
+}
+
+.category-checkbox input {
+  margin-right: 6px;
+}
+
+/* Style des boutons */
+button[type="submit"] {
+  font-family: 'Pixelify Sans', sans-serif;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #A504A2;
+  color: white;
+  border: 2px solid #A504A2;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+button[type="submit"]:disabled {
+  background-color: #717171;
+  border-color: #717171;
+  cursor: not-allowed;
+}
+
+/* Style pour "mot de passe oublié" */
+.forgot-password {
+  text-align: right;
+  margin-top: 8px;
+}
+
+.forgot-password span {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.forgot-password span:hover {
+  color: #e94560;
+}
+
+/* Style pour le lien d'inscription */
+.signup-link {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.signup-link a {
+  color: lightblue;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .signup-container, .login-container {
+    padding: 20px;
+  }
+  
+  .signup-container h2, .login-container h2 {
+    font-size: 2rem;
+  }
+  
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+  
+  .category-checkbox {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
 }
 
 .homePage {
@@ -52,14 +312,15 @@ body {
   font-weight: bold;
   color: white;
   text-align: center;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .link-text {
+  font-size: 16px;
   color: white;
-  font-family: monospace;
+  font-family: 'tourney';
   letter-spacing: 1px;
-  border: 2px solid white;
   padding: 0 3px;
 }
 
@@ -271,10 +532,11 @@ body {
 /* Category Cards */
 .category-cards {
   display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding: 0 15px;
   scroll-snap-type: x mandatory;
+  width: 100%;
+  overflow-x: auto; /* Permet de scroller horizontalement si les éléments dépassent */
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0px 5px 20px -5px #B89EF1;
 }
 
 .category-card {
@@ -283,7 +545,7 @@ body {
   position: relative;
   scroll-snap-align: start;
   overflow: hidden;
-  border-radius: 5px;
+  border: 1px solid #B89EF1;
 }
 
 .category-card img {
@@ -301,6 +563,10 @@ body {
   font-size: 18px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
+}
+
+.category-cards::-webkit-scrollbar {
+  display: none;
 }
 
 /* Sidebar Menu Styles */
@@ -883,7 +1149,6 @@ body {
   border: 3px solid #e94560;
 }
 
-.profile-picture img {
 .about-page {
   background-color: #000;
   color: #fff;
@@ -1063,77 +1328,14 @@ body {
 
 .beta-title {
   font-size: 1.5rem;
-  margin: 10px 0;
+  margin: 15px;
   font-weight: normal;
-}
-
-/* Barre de recherche */
-.beta-search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #8fffff;
-  border-radius: 20px;
-  padding: 8px 15px;
-  margin: 15px 0;
-}
-
-.search-input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  color: #333;
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.filter-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #333;
-}
-
-/* Section des jeux beta */
-.beta-section {
-  margin: 20px 0;
 }
 
 .beta-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  font-weight: normal;
+  margin: 30px 15px;
 }
 
-.beta-games-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 5px 0;
-  margin-bottom: 25px;
-}
-
-.beta-game-card {
-  min-width: 150px;
-  border: 2px solid #ff00ff;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.beta-game-image {
-  width: 100%;
-  height: 120px;
-  overflow: hidden;
-}
-
-.beta-game-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 /* Photo de profil par défaut */
 .default-profile-picture {
   width: 100%;
@@ -1499,8 +1701,66 @@ body {
   
   .game-image {
     height: 100px;
+  }
+}
+/* Section des jeux beta */
+.beta-section {
+  margin: 15px;
+}
+
+.beta-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.beta-game-card {
+  min-width: 150px;
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card-library {
+  border: 2px solid lightblue;
+  box-shadow: inset 0 0 0 10px black;
+  padding: 3px;
+
+}
+
+.beta-game-image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  border-top-right-radius : 3px;
+  border-top-left-radius : 3px;
+}
+
+.beta-game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.beta-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .beta-game-info {
   padding: 10px;
+}
+
+.info-library {
+  background-color: #B89EF1;
+  border-bottom-right-radius : 3px;
+  border-bottom-left-radius : 3px;
 }
 
 .beta-game-title {
@@ -1547,7 +1807,7 @@ body {
 
 .beta-section-title {
   font-size: 1.1rem;
-  margin-bottom: 15px;
+  margin: 15px;
   padding-bottom: 5px;
   border-bottom: 1px solid #ff00ff;
   font-weight: normal;
@@ -1555,10 +1815,29 @@ body {
 
 .beta-announcement-item {
   display: flex;
-  margin-bottom: 15px;
+  margin: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid #222;
   gap: 15px;
+}
+
+.beta-community-item {
+  display: flex;
+  margin: 15px;
+  padding: 15px;
+  gap: 15px;
+}
+
+.beta-community-red {
+  border: 1px solid #FF0090;
+}
+
+.beta-community-green {
+  border: 1px solid #00FF00;
+}
+
+.beta-community-violet {
+  border: 1px solid #B89EF1;
 }
 
 .announcement-image {
@@ -1809,4 +2088,33 @@ body {
   .game-purchase-info {
     min-width: 250px;
   }
+}
+
+/* Barre de recherche */
+.beta-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #8fffff;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 15px;
+}
+
+.search-input {
+  flex: 1;
+  border: 1px solid;
+  background: transparent;
+  color: #333;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.filter-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
 }
