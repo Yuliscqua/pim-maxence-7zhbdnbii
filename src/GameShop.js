@@ -3,7 +3,6 @@ import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from './firebase';
 import Header from './components/Header';
-import Noter from './components/Noter';
 import './style.css';
 
 const GameShop = () => {
@@ -41,6 +40,17 @@ const GameShop = () => {
                         id: docSnap.id,
                         ...gameData
                     });
+                    
+                    // Vérifiez si la date existe
+                    if (gameData.addedat) {
+                        if (gameData.addedat.toDate) {
+                            const date = gameData.addedat.toDate();
+                            setDateData(date);
+                        } else if (typeof gameData.addedat === 'string') {
+                            const date = new Date(gameData.addedat);
+                            setDateData(date);
+                        }
+                    }
                 } else {
                     console.log("Aucun jeu trouvé avec l'ID:", gameId);
                     setError("Aucun jeu trouvé avec cet identifiant.");
@@ -103,6 +113,18 @@ const GameShop = () => {
         }
     };
 
+    const formatDate = (date) => {
+        if (!date) return '';
+        
+        return date.toLocaleDateString('fr-FR', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+    };
+
     if (loading) return <div>Chargement...</div>;
     if (error) return <div className="error-message">{error}</div>;
     if (!game) return <div>Aucun jeu trouvé pour l'ID: {gameId}</div>;
@@ -113,11 +135,7 @@ const GameShop = () => {
             {game.banner && <img src={game.banner} alt={game.name} className="game-banner" />}
             <h2>{game.name}</h2>
             <div className="game-info">
-                {game.addedat && (
-                    <span className="game-date">
-                        Publié le : {new Date(game.addedat.seconds ? game.addedat.toDate() : game.addedat).toLocaleDateString()}
-                    </span>
-                    )}
+                {game.addedat && <p>Lancé le : {dateData ? formatDate(dateData) : 'Date non disponible'}</p>}
                 {game.price && <p>Prix: {game.price} €</p>}
                 {game.description && <p>Description: {game.description}</p>}
                 {game.genre && <p>Catégorie : {game.genre}</p>}
@@ -131,7 +149,6 @@ const GameShop = () => {
                     {purchasing ? 'Achat en cours...' : 'Acheter ce jeu'}
                 </button>
             </div>
-            <Noter gameId={gameId} userId={userId} />
         </div>
     );
 };

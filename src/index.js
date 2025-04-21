@@ -11,11 +11,6 @@ import SignIn from "./SignIn.js";
 import Profile from "./Profile.js";
 import LogIn from "./LogIn.js";
 import Library from "./Library.js";
-import Beta from "./Beta.js";
-import Community from "./Community.js";
-import TipsCreation from "./Tips-creation.js";
-import Classement from "./Classement.js";
-import Events from "./Events.js";
 
 const root = createRoot(document.getElementById('app'));
 
@@ -32,11 +27,6 @@ root.render(
           <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>
           <Route path="/contact/:userId" element={<Contact />}/>
           <Route path="/library/:userId" element={<Library />}></Route>
-          <Route path="/versions-beta/:userId" element={<Beta />}></Route>
-          <Route path="/community/:userId" element={<Community />}></Route>
-          <Route path="/tips-creation/:userId" element={<TipsCreation />}></Route>
-          <Route path="/classement/:userId" element={<Classement />}></Route>
-          <Route path="/events/:userId" element={<Events />}></Route>
         </Routes>
     </Router>
   </div>
