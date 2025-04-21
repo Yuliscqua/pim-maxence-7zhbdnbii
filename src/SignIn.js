@@ -48,7 +48,6 @@ const Signup = () => {
         createdAt: new Date()
       });
       
-      // 4. Rediriger vers la page de profil
       navigate(`/shop/${user.uid}`);
     } catch (err) {
       setError(err.message);
@@ -64,7 +63,7 @@ const Signup = () => {
       
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Nom</label>
+          <label>Pseudo</label>
           <input
             type="text"
             value={name}
