@@ -12,6 +12,8 @@
 body {
   background-color: black;
   color: white;
+  max-width: 393px;
+  align-items: center;
 }
 
 .Home {
@@ -545,7 +547,6 @@ button[type="submit"]:disabled {
 .category-cards {
   display: flex;
   overflow-x: auto;
-  gap: 15px;
   padding: 0 15px;
   scroll-snap-type: x mandatory;
   width: 100%;
@@ -646,7 +647,6 @@ button[type="submit"]:disabled {
 /* For desktop view - optional */
 @media (min-width: 768px) {
   .game-cards, .category-cards {
-    flex-wrap: wrap;
     justify-content: flex-start;
   }
   
@@ -1097,7 +1097,7 @@ button[type="submit"]:disabled {
   flex-direction: column;
   background-color: #1a1a2e;
   color: white;
-  padding: 30px;
+  padding: 0 30px;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
@@ -2140,7 +2140,7 @@ button[type="submit"]:disabled {
   z-index: 101; 
 }
 
-.custom-image-fraise2 {
+.custom-image-fraise {
   position: absolute;
   width: 33px;
   height: 33px;
@@ -2323,6 +2323,7 @@ button[type="submit"]:disabled {
 
 /* Barre de recherche */
 .community-search-bar {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #8fffff;
@@ -3243,7 +3244,6 @@ button[type="submit"]:disabled {
   position: relative;
   min-width: 150px;
   height: 100px;
-  border-radius: 5px;
   overflow: hidden;
   flex: 0 0 auto;
   text-decoration: none;

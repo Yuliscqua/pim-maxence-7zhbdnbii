@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { doc, getDoc, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
 import Header from './components/Header.js'
@@ -92,39 +92,6 @@ const Profile = () => {
       setEditMode(false);
     } catch (err) {
       setError('Erreur lors de la mise à jour du profil: ' + err.message);
-    }
-  };
-
-  const handleAddGame = async () => {
-    try {
-      // Créer un nouveau jeu
-      const newGameRef = doc(collection(db, 'games'));
-      await setDoc(newGameRef, {
-        title: gameTitle,
-        genre: gameGenre,
-        addedBy: userId,
-        addedAt: new Date()
-      });
-      
-      // Ajouter l'ID du jeu à la liste des jeux de l'utilisateur
-      const userRef = doc(db, 'users', userId);
-      await updateDoc(userRef, {
-        games: arrayUnion(newGameRef.id)
-      });
-      
-      // Ajouter le jeu localement
-      setUserGames([...userGames, {
-        id: newGameRef.id,
-        title: gameTitle,
-        genre: gameGenre
-      }]);
-      
-      // Réinitialiser le formulaire
-      setGameTitle('');
-      setGameGenre('');
-      setAddGameMode(false);
-    } catch (err) {
-      setError('Erreur lors de l\'ajout du jeu: ' + err.message);
     }
   };
 
@@ -226,40 +193,9 @@ const Profile = () => {
       <div className="games-section">
         <h3>Jeux possédés</h3>
         
-        {isOwner && (
-          <button onClick={() => setAddGameMode(!addGameMode)}>
-            {addGameMode ? 'Annuler' : 'Ajouter un jeu'}
-          </button>
-        )}
-        
-        {addGameMode && (
-          <div className="add-game-form">
-            <div className="form-group">
-              <label>Titre du jeu</label>
-              <input
-                type="text"
-                value={gameTitle}
-                onChange={(e) => setGameTitle(e.target.value)}
-              />
-            </div>
-            
-            <div className="form-group">
-              <label>Genre</label>
-              <select
-                value={gameGenre}
-                onChange={(e) => setGameGenre(e.target.value)}
-              >
-                <option value="">Sélectionner un genre</option>
-                {gameGenres.map(genre => (
-                  <option key={genre} value={genre}>{genre}</option>
-                ))}
-              </select>
-            </div>
-            
-            <button onClick={handleAddGame}>Ajouter</button>
-          </div>
-        )}
-        
+        {isOwner ? (
+          <Link to={`/add_game/${userId}`} className="details-button">Ajouter un jeu</Link>
+        ): <div></div>}
         <div className="games-list">
           {userGames.length > 0 ? (
             userGames.map(game => (

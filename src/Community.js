@@ -4,6 +4,7 @@ import { doc, getDocs, collection } from 'firebase/firestore';
 import { db } from './firebase';
 import Header from './components/Header';
 import './style.css';
+import SearchBar from './components/SearchBar';
 
 function Community() {
     const { userId } = useParams();
@@ -114,14 +115,7 @@ function Community() {
                 </section>
                 
                 {/* Barre de recherche */}
-                <div className="community-search-bar">
-                    <input 
-                        type="text" 
-                        placeholder="Rechercher dans la communauté..." 
-                        className="search-input"
-                    />
-                    <div className="filter-icon">◀</div>
-                </div>
+                <SearchBar />
                 
                 {/* Publications */}
                 <section className="community-section">

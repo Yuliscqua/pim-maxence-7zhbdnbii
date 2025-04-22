@@ -5,7 +5,8 @@ import '../style.css';
 
 function SearchBar () {
     return (
-        <div className="beta-search-bar">
+        <div className="community-search-bar">
+            <div className='custom-image'></div>
             <div class="custom-image"></div>
             <input 
                 type="text" 
