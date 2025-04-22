@@ -52,7 +52,7 @@ function TipsCreation () {
                     </div>
                     <div className='infos'>
                         <div>592 membres</div>
-                        <p>Ouverts aux débutants comme aux experts, utilisez cette communauté pour poser toutes vos questions sur le code dans le développement d’un jeu vidéo.</p>
+                        <p>Venez apprendre ! Ouverts aux débutants comme aux experts !</p>
                     </div>
                 </div>
                 <div className='beta-community-item beta-community-green '>
@@ -64,7 +64,7 @@ function TipsCreation () {
                     </div>
                     <div className='infos'>
                         <div>812 membres</div>
-                        <p>Pour faire un bon jeu il faut savoir se mettre à la place du joueur, ce qui est difficile car chacun réfléchis différement, l’objectif de cette comunauté est de s’entraider afin de mieux comprendre la façon de penser des joueurs et comment les satisfaire.</p>
+                        <p>Apprenez comment satisfaire les attentes de vos joueurs !</p>
                     </div>
                 </div>
                 <div className='beta-community-item beta-community-violet'>
@@ -76,7 +76,7 @@ function TipsCreation () {
                     </div>
                     <div className='infos'>
                         <div>412 membres</div>
-                        <p>Lorsqu’on fait un jeu, le gameplay est souvent le plus important, mais en fonction de l’expérience que l’on cherche à procurer au joueur, le scénario peut l’etre tout autant. Cette communauté vise à aider les développeurs débutant à écrire des scénario impactants pour leurs jeux. </p>
+                        <p>Rejoignez notre groupe pour obtenir des conseils pour raconter une histoire </p>
                     </div>
                 </div>
             </div>

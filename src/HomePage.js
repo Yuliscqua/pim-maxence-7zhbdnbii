@@ -262,7 +262,7 @@ function HomePage() {
           </div>
         </div>
         <div className="see-more">
-          <Link to={`/allgames/${userId}`}>VOIR PLUS</Link>
+          <Link to={`/allgames/${userId}/all`}>VOIR PLUS</Link>
         </div>
       </section>
 

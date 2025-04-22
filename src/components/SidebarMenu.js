@@ -13,7 +13,6 @@ const SidebarMenu = ({ userId, onClose }) => {
     { name: 'TIPS/CRÉATION', path: '/tips-creation' },
     { name: 'VERSIONS BETA', path: '/versions-beta' },
     { name: 'CLASSEMENT', path: '/classement' },
-    { name: 'ÉVÉNEMENTS', path: '/events' },
     { name: 'CONTACT', path: '/contact' },
     { name: 'À PROPOS', path: '/a-propos' },
     { name: 'MENTIONS LÉGALES', path: '/mentions-legales' }
