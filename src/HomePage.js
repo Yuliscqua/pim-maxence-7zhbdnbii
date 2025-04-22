@@ -46,12 +46,12 @@ function HomePage() {
       {
         id: 'hollow-knight',
         name: 'Hollow Knight',
-        image: 'https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1667006028'
+        image: 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/wiiu_download_software_5/H2x1_WiiUDS_HollowKnight_image1600w.jpg'
       },
       {
         id: 'light-fall',
         name: 'Light Fall',
-        image: 'https://pbs.twimg.com/media/Dde9PfJVQAELPCr.jpg'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo5x3YosnNlMTgpb9C0mAVTkcbKhK6bSt4Cw&s'
       }
     ]
   };
@@ -73,21 +73,21 @@ function HomePage() {
             id: 'celeste-daily',
             name: 'Celeste',
             logo: 'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Celeste_image1600w.jpg',
-            price: '19.40 €',
+            price: '19.40',
             genre: 'Aventure'
           },
           {
             id: 'inscryption-daily',
             name: 'Inscryption',
             logo: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000056157/9a0b6d0860c999c2c48d682c0821bfde662c39c1d3cbad8034ec48b502a41e1b',
-            price: '20.00 €',
+            price: '20.00',
             genre: 'Stratégie'
           },
           {
             id: 'omori-daily',
             name: 'Omori',
             logo: 'https://cdn.akamai.steamstatic.com/steam/apps/1150690/capsule_616x353.jpg?t=1666923826',
-            price: '16.79 €',
+            price: '16.79',
             genre: 'Horreur psychologique'
           }
         ];
@@ -98,21 +98,21 @@ function HomePage() {
             id: 'hades-rec',
             name: 'Hades',
             logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/capsule_616x353.jpg?t=1680293801',
-            price: '24.99 €',
+            price: '24.99',
             genre: 'Action'
           },
           {
             id: 'hollow-knight-rec',
             name: 'Hollow Knight',
             logo: 'https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1667006028',
-            price: '14.99 €',
+            price: '14.99',
             genre: 'Aventure'
           },
           {
             id: 'cuphead-rec',
             name: 'Cuphead',
             logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/268910/capsule_616x353.jpg?t=1695655205',
-            price: '19.99 €',
+            price: '19.99',
             genre: 'Psychédélique'
           }
         ];
@@ -143,21 +143,21 @@ function HomePage() {
             id: 'celeste-daily',
             name: 'Celeste',
             logo: 'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Celeste_image1600w.jpg',
-            price: '19.40 €',
+            price: '19.40',
             genre: 'Aventure'
           },
           {
             id: 'inscryption-daily',
             name: 'Inscryption',
             logo: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000056157/9a0b6d0860c999c2c48d682c0821bfde662c39c1d3cbad8034ec48b502a41e1b',
-            price: '20.00 €',
+            price: '20.00',
             genre: 'Stratégie'
           },
           {
             id: 'omori-daily',
             name: 'Omori',
             logo: 'https://cdn.akamai.steamstatic.com/steam/apps/1150690/capsule_616x353.jpg?t=1666923826',
-            price: '16.79 €',
+            price: '16.79',
             genre: 'Horreur psychologique'
           }
         ]);
@@ -166,21 +166,21 @@ function HomePage() {
             id: 'hades-rec',
             name: 'Hades',
             logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/capsule_616x353.jpg?t=1680293801',
-            price: '24.99 €',
+            price: '24.99',
             genre: 'Action'
           },
           {
             id: 'hollow-knight-rec',
             name: 'Hollow Knight',
             logo: 'https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1667006028',
-            price: '14.99 €',
+            price: '14.99',
             genre: 'Aventure'
           },
           {
             id: 'cuphead-rec',
             name: 'Cuphead',
             logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/268910/capsule_616x353.jpg?t=1695655205',
-            price: '19.99 €',
+            price: '19.99',
             genre: 'Psychédélique'
           }
         ]);
@@ -249,7 +249,7 @@ function HomePage() {
                   </div>
                   <div className="game-card-info">
                     <h4 className="game-card-title">{game.name}</h4>
-                    <span className="game-card-price">{game.price}</span>
+                    <span className="game-card-price">{game.price} €</span>
                   </div>
                   <div className="game-card-buttons">
                     <button className="game-card-btn">ACHETER</button>
@@ -282,7 +282,7 @@ function HomePage() {
                   </div>
                   <div className="game-card-info">
                     <h4 className="game-card-title">{game.name}</h4>
-                    <span className="game-card-price">{game.price}</span>
+                    <span className="game-card-price">{game.price} €</span>
                   </div>
                   <div className="game-card-buttons">
                     <button className="game-card-btn">ACHETER</button>
@@ -305,7 +305,7 @@ function HomePage() {
         <div className="category-cards">
                 {genres.map(genre => (
                     <div className="category-card" key={genre.id}>
-                        <img src={genre.image} />
+                        <img src={genre.image} alt={genre.name} />
                         <div className="category-name">{genre.name}</div>
                     </div>
                 ))}

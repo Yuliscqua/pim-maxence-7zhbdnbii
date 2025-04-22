@@ -20,7 +20,7 @@ function Beta () {
             id: '2',
             title: 'Nouveauté : Port Valley',
             description: 'La demo est enfin sortie ! Vous pouvez la télécharger pour un petit port de pêche en cours de rénovation, vous amenera-t-il à plus ?',
-            image: 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/904450/capsule_616x353.jpg?t=1726600602',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaYiPbPsxXS7ShJ5aX-6OrHLz-1t1pI3iO3Q&s',
             gameId: 'PORT_VALLEY_GAME_ID' // Remplacez par l'ID réel du jeu dans Firestore
         },
         {

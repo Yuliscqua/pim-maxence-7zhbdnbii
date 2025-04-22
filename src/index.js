@@ -18,6 +18,7 @@ import Classement from "./Classement.js";
 import Events from "./Events.js";
 import About from "./About.js";
 import LegalNotice from "./LegalNotice.js";
+import AllGames from "./AllGames.js";
 
 const root = createRoot(document.getElementById('app'));
 
@@ -29,6 +30,7 @@ root.render(
           <Route path="/signin" element ={<SignIn />}/>
           <Route path="/login" element={<LogIn />}/>
           <Route path="/shop/:userId" element={<HomePage />} />
+          <Route path="/shop/:userId/:category" element={<AllGames />} />
           <Route path="/profile/:userId" element={<Profile />}/>
           <Route path="/add_game/:userId" element={<AddingPage />}/>
           <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>

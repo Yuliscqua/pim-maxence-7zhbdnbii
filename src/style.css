@@ -12,8 +12,8 @@
 body {
   background-color: black;
   color: white;
+  max-width: 393px;
   align-items: center;
-  width: auto;
 }
 
 .Home {
@@ -1325,10 +1325,6 @@ button[type="submit"]:disabled {
   color: white;
 }
 
-.beta-game-title {
-  color: white;
-}
-
 /* Photo de profil par défaut */
 .default-profile-picture {
   width: 100%;
@@ -2168,7 +2164,7 @@ button[type="submit"]:disabled {
   position: absolute;
   width: 21px;
   height: 25px;
-  left: 170px;
+  left: 250px;
   top: 20px;
   background: url(./img/falling.png);
   z-index: 0; 
@@ -2178,7 +2174,7 @@ button[type="submit"]:disabled {
   position: absolute;
   width: 33px;
   height: 33px;
-  left: 180px;
+  left: 262px;
   top: 275px;
   background: url(./img/fraise.png);
   z-index: 1000;   
@@ -3332,3 +3328,453 @@ button[type="submit"]:disabled {
   }
 }
 
+/* Styles pour la page AllGames */
+.all-games-page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.all-games-page .beta-title {
+  font-size: 1.5rem;
+  margin: 15px;
+  font-weight: normal;
+  color: white;
+}
+
+/* Grid pour l'affichage des jeux */
+.all-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 12px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Message quand aucun jeu n'est trouvé */
+.no-games-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Ajustements pour les cartes sur mobile */
+.all-games-grid .game-card-link {
+  width: 100%;
+}
+
+.all-games-grid .game-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-games-grid .game-card-image {
+  height: 100px;
+}
+
+.all-games-grid .game-card-info {
+  padding: 8px;
+}
+
+.all-games-grid .game-card-title {
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.all-games-grid .game-card-price {
+  font-size: 0.7rem;
+}
+
+.all-games-grid .game-card-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.all-games-grid .game-card-btn {
+  padding: 4px 0;
+  font-size: 0.6rem;
+}
+
+/* Media queries pour responsivité */
+@media (min-width: 400px) {
+  .all-games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .all-games-grid .game-card-image {
+    height: 110px;
+  }
+  
+  .all-games-grid .game-card-title {
+    font-size: 0.85rem;
+  }
+  
+  .all-games-grid .game-card-btn {
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .all-games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .all-games-grid .game-card-image {
+    height: 130px;
+  }
+  
+  .all-games-grid .game-card-info {
+    padding: 10px;
+  }
+  
+  .all-games-grid .game-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .all-games-grid .game-card-price {
+    font-size: 0.8rem;
+  }
+  
+  .all-games-grid .game-card-btn {
+    padding: 5px 0;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .all-games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+  }
+  
+  .all-games-grid .game-card-image {
+    height: 150px;
+  }
+  
+  .all-games-grid .game-card-title {
+    font-size: 1rem;
+  }
+  
+  .all-games-grid .game-card-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* Optimisations pour les cartes de jeux sur mobile */
+
+/* Ajustements du carousel sur mobile */
+.carousel-container {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+/* Ajustement de la taille et l'espacement des cartes sur mobile */
+.game-card-link {
+  min-width: 130px; /* Plus petite sur mobile */
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: white;
+  scroll-snap-align: start;
+}
+
+.game-card {
+  border: 2px solid #ff00ff;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card-image {
+  position: relative;
+  height: 100px; /* Plus petite sur mobile */
+  overflow: hidden;
+}
+
+.game-card-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.game-card-tag {
+  display: inline-block;
+  background-color: #ff00ff;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+}
+
+.game-card-info {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.game-card-title {
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.game-card-price {
+  font-size: 0.7rem;
+}
+
+.game-card-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.game-card-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 4px 0;
+  font-size: 0.6rem;
+  cursor: pointer;
+}
+
+.game-card-btn:first-child {
+  background-color: #ff00ff;
+}
+
+/* Media queries pour tablettes et ordinateurs */
+@media (min-width: 480px) {
+  .carousel-container {
+    padding: 0 15px;
+  }
+  
+  .carousel-wrapper {
+    gap: 12px;
+  }
+  
+  .game-card-link {
+    min-width: 150px;
+  }
+  
+  .game-card-image {
+    height: 110px;
+  }
+  
+  .game-card-tag {
+    padding: 2px 5px;
+    font-size: 0.65rem;
+  }
+  
+  .game-card-title {
+    font-size: 0.85rem;
+  }
+  
+  .game-card-price {
+    font-size: 0.75rem;
+  }
+  
+  .game-card-btn {
+    padding: 4px 0;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-container {
+    padding: 0 20px;
+  }
+  
+  .carousel-wrapper {
+    gap: 15px;
+  }
+  
+  .game-card-link {
+    min-width: 180px;
+  }
+  
+  .game-card-image {
+    height: 120px;
+  }
+  
+  .game-card-tag {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  
+  .game-card-info {
+    padding: 10px;
+  }
+  
+  .game-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .game-card-price {
+    font-size: 0.8rem;
+  }
+  
+  .game-card-btn {
+    padding: 5px 0;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .game-card-link {
+    min-width: 220px;
+  }
+  
+  .game-card-image {
+    height: 150px;
+  }
+  
+  .game-card-tag {
+    font-size: 0.75rem;
+  }
+  
+  .game-card-title {
+    font-size: 1rem;
+  }
+  
+  .game-card-price {
+    font-size: 0.9rem;
+  }
+  
+  .game-card-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* Optimisations pour les catégories sur mobile */
+.categories-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  padding: 0 15px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Ajustement des catégories pour mobile */
+.category-cards {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 10px;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  gap: 10px; /* Espacement cohérent entre les éléments */
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0px 5px 20px -5px #B89EF1;
+  margin-bottom: 10px;
+}
+
+.category-card {
+  min-width: 120px; /* Taille plus petite sur mobile */
+  height: 80px;
+  position: relative;
+  scroll-snap-align: start;
+  overflow: hidden;
+  border: 1px solid #B89EF1;
+  flex: 0 0 auto; /* Empêche l'élément de s'étirer */
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.9rem; /* Taille de police plus petite pour mobile */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  width: 90%; /* Empêche le débordement du texte */
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour améliorer la lisibilité */
+  border-radius: 3px;
+}
+
+/* Media queries pour tablettes et ordinateurs */
+@media (min-width: 480px) {
+  .category-cards {
+    padding: 0 15px;
+    gap: 12px;
+  }
+  
+  .category-card {
+    min-width: 140px;
+    height: 90px;
+  }
+  
+  .category-name {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .category-cards {
+    gap: 15px;
+  }
+  
+  .category-card {
+    min-width: 150px;
+    height: 100px;
+  }
+  
+  .category-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .category-cards {
+    gap: 20px;
+  }
+  
+  .category-card {
+    min-width: 180px;
+    height: 120px;
+  }
+  
+  .category-name {
+    font-size: 1.2rem;
+  }
+}
