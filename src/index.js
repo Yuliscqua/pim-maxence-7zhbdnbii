@@ -17,6 +17,7 @@ import TipsCreation from "./Tips-creation.js";
 import Classement from "./Classement.js";
 import Events from "./Events.js";
 import About from "./About.js";
+import LegalNotice from "./LegalNotice.js";
 
 const root = createRoot(document.getElementById('app'));
 
@@ -39,6 +40,7 @@ root.render(
           <Route path="/classement/:userId" element={<Classement />}></Route>
           <Route path="/events/:userId" element={<Events />}></Route>
           <Route path="/a-propos/:userId" element={<About/>}></Route>
+          <Route path="/mentions-legales/:userId" element={<LegalNotice />}></Route>
         </Routes>
     </Router>
   </div>
