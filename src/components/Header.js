@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style.css';
 import SidebarMenu from './SidebarMenu';
+import mascotte from './mascotte.png';
 
 function Header({ userId }) {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -23,7 +24,7 @@ function Header({ userId }) {
                 <div className="header-icons">
                 <div className="heart-icon">♡</div>
                 <div className="pixel-avatar">
-                    <img src="/mascotte.png"></img>
+                    <img src={mascotte} alt="Pixel Cat"></img>
                 </div>
                 </div>
             </div>

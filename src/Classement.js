@@ -22,7 +22,7 @@ function Classement () {
                     <option value="posts">Engagement</option>
                 </select>
             </h3>
-            <GameList/>
+            <GameList userId={ userId }/>
         </div>
     )
 }

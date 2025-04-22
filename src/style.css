@@ -12,8 +12,8 @@
 body {
   background-color: black;
   color: white;
-  max-width: 393px;
   align-items: center;
+  width: auto;
 }
 
 .Home {
@@ -1322,6 +1322,10 @@ button[type="submit"]:disabled {
 
 .beta-subtitle {
   margin: 30px 15px;
+  color: white;
+}
+
+.beta-game-title {
   color: white;
 }
 
@@ -3327,3 +3331,4 @@ button[type="submit"]:disabled {
     height: 150px;
   }
 }
+
