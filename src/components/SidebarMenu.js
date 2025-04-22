@@ -64,7 +64,7 @@ const SidebarMenu = ({ userId, onClose }) => {
                 </div>
               )}
             </div>
-            <Link to={`/profile/${userId}`}>{userData.name}</Link>
+            <Link className="beta-title" to={`/profile/${userId}`}>{userData.name}</Link>
           </div>
         </div>
         <nav className="sidebar-nav">

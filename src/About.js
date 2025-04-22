@@ -21,7 +21,9 @@ function About() {
           </p>
         </section>
         
-        <div className="separator"></div>
+        <div className="separator">
+          <div class="custom-image-walking"></div>
+        </div>
         
         <section className="about-why">
           <h3>Pourquoi IndieLink ?</h3>

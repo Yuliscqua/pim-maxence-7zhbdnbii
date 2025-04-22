@@ -21,15 +21,23 @@ const GameList = ({userId}) => {
 
     return (
         <div>
-            <h2>Jeux en recommendations</h2>
-            <ul>
-                {games.map(game => (
-                    <li key={game.id}>
-                        <img  src={game.logo} />
-                        <Link to={`../game_shop/${userId}/${game.id}`}>{game.name}</Link> - {game.price}
-                    </li>
+            <h2 className="beta-title">Jeux en recommendations</h2>
+            <div className="beta-announcements-list">
+                {games.map((game, index) => (
+                    <Link to={`../game_shop/${userId}/${game.id}`} key={game.id} className="beta-announcement-item">
+                        <h2 className="beta-title number">{index+1}</h2>
+                        <img className="classement-image" src={game.logo} />
+                        <div className="announcement-content">
+                            <h4 className="announcement-title">{game.name}</h4>
+                            <div 
+                                className="details-button"
+                            >
+                            DÉTAILS
+                            </div>
+                        </div>
+                    </Link>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }

@@ -41,7 +41,9 @@ function TipsCreation () {
             <h3 className="beta-subtitle">Communautés</h3>
 
             <div className="beta-communities-list">
-            <div className='beta-community-item beta-community-red'>
+                <div class="custom-image-fraise"></div>
+                <div class="custom-image-lookup"></div>
+                <div className='beta-community-item beta-community-red'>
                     <div className="legend">
                         <div>Apprendre à coder</div>
                         <div className="announcement-image ">
