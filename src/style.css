@@ -2168,7 +2168,7 @@ button[type="submit"]:disabled {
   position: absolute;
   width: 21px;
   height: 25px;
-  left: 250px;
+  left: 170px;
   top: 20px;
   background: url(./img/falling.png);
   z-index: 0; 
@@ -2178,7 +2178,7 @@ button[type="submit"]:disabled {
   position: absolute;
   width: 33px;
   height: 33px;
-  left: 262px;
+  left: 180px;
   top: 275px;
   background: url(./img/fraise.png);
   z-index: 1000;   
