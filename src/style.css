@@ -1831,6 +1831,10 @@ button[type="submit"]:disabled {
   gap: 15px;
 }
 
+.beta-communities-list {
+  position: relative;
+}
+
 .beta-community-item {
   display: flex;
   margin: 15px;
@@ -2108,8 +2112,28 @@ button[type="submit"]:disabled {
   height: 33px;
   left: 43px;
   top: -31px;
-  background: url(img/image.png);
-  z-index: 101; /* Pour s'assurer que l'image apparaît au-dessus de la barre */
+  background: url(./img/image.png);
+  z-index: 101;
+}
+
+.custom-image-lookup {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 350px;
+  top: -28px;
+  background: url(./img/lookup.png);
+  z-index: 101; 
+}
+
+.custom-image-fraise {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 300px;
+  top: -50px;
+  background: url(./img/fraise.png);
+  z-index: 1000; 
 }
 
 .beta-search-bar {
