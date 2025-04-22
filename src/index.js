@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home.js';
 import HomePage from './HomePage';
 import AddingPage from "./AddingPage.js"; 
+import AllGames from "./AllGames.js";
 import GameShop from "./GameShop.js";
 import Contact from "./Contact.js";
 import SignIn from "./SignIn.js";
@@ -29,6 +30,7 @@ root.render(
           <Route path="/signin" element ={<SignIn />}/>
           <Route path="/login" element={<LogIn />}/>
           <Route path="/shop/:userId" element={<HomePage />} />
+          <Route path="/allgames/:userId/:category" element={<AllGames />} />
           <Route path="/profile/:userId" element={<Profile />}/>
           <Route path="/add_game/:userId" element={<AddingPage />}/>
           <Route path="/game_shop/:userId/:gameId" element={<GameShop />}/>
