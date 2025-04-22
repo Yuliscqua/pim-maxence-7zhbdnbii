@@ -56,7 +56,11 @@ function Library() {
       <Header userId={userId} />
       <h2 className="beta-title">Bibliothèque</h2>
       <SearchBar />
-      <h3 className="beta-subtitle">Jeux possédés</h3>
+      <div className="relativity">
+        <h3 className="beta-subtitle">Jeux possédés</h3>
+          <div class="custom-image-fraise2"></div>
+          <div class="custom-image-falling"></div>
+      </div>
       <div className="beta-games-grid">
         {userGames.length > 0 ? (
           userGames.map(game => (
