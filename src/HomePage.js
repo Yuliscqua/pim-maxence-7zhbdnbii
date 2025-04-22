@@ -11,6 +11,20 @@ function HomePage() {
   const [dailyGames, setDailyGames] = useState([]);
   const [recommendedGames, setRecommendedGames] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [genres, setGenres] = useState([]);
+
+    const fetchGames = async () => {
+        const querySnapshot = await getDocs(collection(db, "genres"));
+        const tipsArray = querySnapshot.docs.map(doc => ({
+            id:doc.id,
+            ...doc.data(),
+        }));
+        setGenres(tipsArray);
+    };
+
+    useEffect(() => {
+        fetchGames();
+    }, []);
 
   // Catégories disponibles
   const categories = [
@@ -288,18 +302,14 @@ function HomePage() {
       {/* Catégories */}
       <section className="categories-section">
         <h3 className="section-title">Catégories qui pourraient vous plaire</h3>
-        <div className="carousel-container">
-          <div className="carousel-wrapper categories-wrapper">
-            {categories.map((category, index) => (
-              <Link key={index} to={`/shop/${userId}/category/${category.id}`} className="category-card">
-                <img src={category.image} alt={category.name} className="category-image" />
-                <div className="category-overlay">
-                  <h4 className="category-name">{category.name}</h4>
-                </div>
-              </Link>
-            ))}
+        <div className="category-cards">
+                {genres.map(genre => (
+                    <div className="category-card" key={genre.id}>
+                        <img src={genre.image} />
+                        <div className="category-name">{genre.name}</div>
+                    </div>
+                ))}
           </div>
-        </div>
       </section>
     </div>
   );

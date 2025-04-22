@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { doc, getDocs, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
 import Header from './components/Header.js';
+import SearchBar from './components/SearchBar.js';
 
 function Beta () {
     const { userId } = useParams();
@@ -50,14 +51,7 @@ function Beta () {
             <h2 className="beta-title">Versions beta</h2>
 
             {/* Barre de recherche */}
-            <div className="beta-search-bar">
-                <input 
-                    type="text" 
-                    placeholder="Rechercher..." 
-                    className="search-input"
-                />
-                <div className="filter-icon">◀</div>
-            </div>
+            <SearchBar />
 
             <h3 className="beta-subtitle">Découvrez les futurs succès</h3>
             
