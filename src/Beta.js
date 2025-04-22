@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import { doc, getDocs, updateDoc, arrayUnion, arrayRemove, collection, setDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
 import Header from './components/Header.js';
-import SearchBar from './components/SearchBar.js'
 
 function Beta () {
     const { userId } = useParams();
@@ -50,7 +49,15 @@ function Beta () {
             <Header userId={userId}/>
             <h2 className="beta-title">Versions beta</h2>
 
-            <SearchBar />
+            {/* Barre de recherche */}
+            <div className="beta-search-bar">
+                <input 
+                    type="text" 
+                    placeholder="Rechercher..." 
+                    className="search-input"
+                />
+                <div className="filter-icon">◀</div>
+            </div>
 
             <h3 className="beta-subtitle">Découvrez les futures succès</h3>
             
@@ -59,7 +66,7 @@ function Beta () {
                 {games.map(game => {
                     if (game.status === 'beta') {
                         return (
-                            <Link to={`/game_shop/${userId}/${game.id}`} key={game.id} className="beta-game-card">
+                            <div key={game.id} className="beta-game-card">
                                 <div className="beta-game-image">
                                     <img src={game.logo || 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2067780/capsule_616x353.jpg?t=1703759640'} alt={game.name} />
                                 </div>
@@ -72,7 +79,7 @@ function Beta () {
                                         <button className="game-btn">WISHLIST</button>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         )
                     }
                     return null;
