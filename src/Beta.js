@@ -59,14 +59,14 @@ function Beta () {
                 <div className="filter-icon">◀</div>
             </div>
 
-            <h3 className="beta-subtitle">Découvrez les futures succès</h3>
+            <h3 className="beta-subtitle">Découvrez les futurs succès</h3>
             
             {/* Jeux en version beta */}
             <div className="beta-games-grid">
                 {games.map(game => {
                     if (game.status === 'beta') {
                         return (
-                            <div key={game.id} className="beta-game-card">
+                            <Link to={`/game_shop/${userId}/${game.id}`} key={game.id} className="beta-game-card">
                                 <div className="beta-game-image">
                                     <img src={game.logo || 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2067780/capsule_616x353.jpg?t=1703759640'} alt={game.name} />
                                 </div>
@@ -79,7 +79,7 @@ function Beta () {
                                         <button className="game-btn">WISHLIST</button>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     }
                     return null;
